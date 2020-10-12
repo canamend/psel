@@ -4,10 +4,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>260</x>
-      <y>200</y>
-      <w>160</w>
-      <h>150</h>
+      <x>100</x>
+      <y>210</y>
+      <w>190</w>
+      <h>210</h>
     </coordinates>
     <panel_attributes>Process
 -
@@ -16,18 +16,21 @@
 - remainingTime : int
 - priority : int
 - arriveTime : int
+- active : boolean
 -
 + execute( ) : void
-+ reset( ) : void</panel_attributes>
++ activate( ) : void
++ reset( ) : void
++ isActive( ) : boolean</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>450</x>
-      <y>200</y>
-      <w>230</w>
-      <h>140</h>
+      <x>380</x>
+      <y>150</y>
+      <w>240</w>
+      <h>210</h>
     </coordinates>
     <panel_attributes>Simulator
 -
@@ -37,15 +40,19 @@
 + SJF( ) : DataTable[ ]
 + SRT( ) : DataTable[ ]
 + Priorities ( ) : DataTable[ ]
-+ RoundRobin( ) : DataTable[ ]</panel_attributes>
++ RoundRobin( ) : DataTable[ ]
++ findNextSRT( ) : Process
++ findNextSJ( ) : Process
++ findNextPriority( ) : Process
++ processArrive( ) : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>200</x>
-      <y>370</y>
-      <w>220</w>
+      <x>90</x>
+      <y>120</y>
+      <w>230</w>
       <h>70</h>
     </coordinates>
     <panel_attributes>Loader
@@ -84,8 +91,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>460</x>
-      <y>370</y>
+      <x>340</x>
+      <y>380</y>
       <w>220</w>
       <h>250</h>
     </coordinates>

@@ -4,6 +4,7 @@ public class Process{
     private int remainingTime;
     private int priority;
     private int arriveTime;
+    private boolean active;
 
     public Process(int id, int cpuTime, int priority, int arriveTime){
         this.id = id;
@@ -11,6 +12,7 @@ public class Process{
         this.priority = priority;
         this.arriveTime = arriveTime;
         remainingTime = cpuTime;
+        active = false;
     }
 
     public int getId(){
@@ -33,7 +35,16 @@ public class Process{
         remainingTime--;
     }
 
+    public void activate(){
+        active = true;
+    }
+
     public void reset(){
         remainingTime = cpuTime;
+        active = false;
+    }
+
+    public boolean isActive(){
+        return active;
     }
 }
