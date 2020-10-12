@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>260</x>
+      <y>200</y>
+      <w>160</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>Process
+-
+- id : int
+- cpuTime : int
+- remainingTime : int
+- priority : int
+- arriveTime : int
+-
++ execute( ) : void
++ reset( ) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>450</x>
+      <y>200</y>
+      <w>230</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>Simulator
+-
+- processes : Process[ ]
+-
++ FIFO( ) : DataTable[ ]
++ SJF( ) : DataTable[ ]
++ SRT( ) : DataTable[ ]
++ Priorities ( ) : DataTable[ ]
++ RoundRobin( ) : DataTable[ ]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>200</x>
+      <y>370</y>
+      <w>220</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Loader
+-
+- fileName : String
+-
++ readProcesses( ): Process[ ]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>720</x>
+      <y>210</y>
+      <w>220</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>Table
+-
+- dataTable : DataTable[ ]
+- averageReturn : float
+- averageResponse : float
+- averageWaste : float
+- averagePenalty : float
+- averageWait : Float
+- totalReturn : int
+- totalResponse : int
+- totalWaste : int
+- totalPenalty : float
+- totalWait : int
+-
++ calculateAverage( ) : void
++ calculateTotal( ) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>370</y>
+      <w>220</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>DataTable
+-
+- process : Process
+- startTime : int
+- endTime : int
+- return : int
+- response : int
+- waste : int
+- penalty : float
+- wait : int
+-
++ calculateReturn( ): void
++ calculateResponse( ): void
++ calculateWaste( ): void
++ calculatePenalty( ): void
++ calculateWait( ): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
