@@ -4,7 +4,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>100</x>
+      <x>120</x>
       <y>210</y>
       <w>190</w>
       <h>210</h>
@@ -27,7 +27,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>380</x>
+      <x>400</x>
       <y>150</y>
       <w>240</w>
       <h>210</h>
@@ -50,7 +50,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>90</x>
+      <x>110</x>
       <y>120</y>
       <w>230</w>
       <h>70</h>
@@ -65,7 +65,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>720</x>
+      <x>740</x>
       <y>210</y>
       <w>220</w>
       <h>250</h>
@@ -73,15 +73,15 @@
     <panel_attributes>Table
 -
 - dataTable : DataTable[ ]
-- averageReturn : float
-- averageResponse : float
-- averageWaste : float
-- averagePenalty : float
-- averageWait : Float
+- averageReturn : double
+- averageResponse : double
+- averageWaste : double
+- averagePenalty : double
+- averageWait : double
 - totalReturn : int
 - totalResponse : int
 - totalWaste : int
-- totalPenalty : float
+- totalPenalty : double
 - totalWait : int
 -
 + calculateAverage( ) : void
@@ -91,7 +91,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>340</x>
+      <x>360</x>
       <y>380</y>
       <w>220</w>
       <h>250</h>
@@ -101,10 +101,10 @@
 - process : Process
 - startTime : int
 - endTime : int
-- return : int
+- output : int
 - response : int
 - waste : int
-- penalty : float
+- penalty : double
 - wait : int
 -
 + calculateReturn( ): void

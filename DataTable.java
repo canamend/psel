@@ -5,7 +5,7 @@ public class DataTable{
     private int output;
     private int response;
     private int waste;
-    private float penalty;
+    private double penalty;
     private int wait;
 
     public DataTable(Process process){
@@ -43,7 +43,7 @@ public class DataTable{
         return waste;
     }
 
-    public float getPenalty(){
+    public double getPenalty(){
         return penalty;
     }
 
@@ -59,6 +59,23 @@ public class DataTable{
         this.endTime = endTime;
     }
 
-    public void calculateReturn( ){
+    public void calculateOutput(){
+        output = endTime - startTime;
+    }
+
+    public void calculateResponse(){
+        response = endTime - process.getArriveTime();
+    }
+
+    public void calculateWaste(){
+        waste = response - process.getCpuTime();
+    }
+
+    public void calculatePenalty(){
+        penalty = response/process.getCpuTime();
+    }
+
+    public void calulateWait(){
+        wait = startTime - process.getArriveTime();
     }
 }
