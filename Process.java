@@ -31,6 +31,10 @@ public class Process{
         return executeTime;
     }
 
+    public int getArriveTime(){
+        return arriveTime;
+    }
+
     public void execute(){
         remainingTime--;
     }

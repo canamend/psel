@@ -26,7 +26,7 @@ public class DataTable{
     public int getStartTime(){
         return startTime;
     }
-    
+
     public int getEndTime(){
         return endTime;
     }
@@ -77,5 +77,15 @@ public class DataTable{
 
     public void calulateWait(){
         wait = startTime - process.getArriveTime();
+    }
+
+    public void reset(){
+        startTime = 0;
+        endTime = 0;
+        output = 0;
+        response = 0;
+        waste = 0;
+        penalty = 0;
+        wait = 0;
     }
 }

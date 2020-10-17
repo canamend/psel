@@ -4,7 +4,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>120</x>
+      <x>100</x>
       <y>210</y>
       <w>190</w>
       <h>210</h>
@@ -27,7 +27,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>400</x>
+      <x>380</x>
       <y>150</y>
       <w>240</w>
       <h>210</h>
@@ -50,7 +50,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>110</x>
+      <x>90</x>
       <y>120</y>
       <w>230</w>
       <h>70</h>
@@ -65,15 +65,15 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>740</x>
-      <y>210</y>
+      <x>700</x>
+      <y>160</y>
       <w>220</w>
       <h>250</h>
     </coordinates>
     <panel_attributes>Table
 -
 - dataTable : DataTable[ ]
-- averageReturn : double
+- averageOutput : double
 - averageResponse : double
 - averageWaste : double
 - averagePenalty : double
@@ -91,7 +91,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>360</x>
+      <x>340</x>
       <y>380</y>
       <w>220</w>
       <h>250</h>
