@@ -1,33 +1,23 @@
 public class Process{
-    private int id;
-    private int cpuTime;
-    private int remainingTime;
-    private int priority;
+    private String id;
+    private int duration;
     private int arriveTime;
-    private boolean active;
+    private int priority;
+    private int cpuTime;
 
-    public Process(int id, int cpuTime, int priority, int arriveTime){
+    public Process(String id,int duration,int arriveTime,int priority){
         this.id = id;
-        this.cpuTime = cpuTime;
-        this.priority = priority;
+        this.duration = duration;
         this.arriveTime = arriveTime;
-        remainingTime = cpuTime;
-        active = false;
+        this.priority = priority;
+        cpuTime = 0;
     }
 
-    public int getId(){
+    public String getId(){
         return id;
     }
 
-    public int getcpuTime(){
-        return cpuTime;
-    }
-    
-    public int getPriority(){
-        return priority;
-    }
-    
-    public int getRemainingTime(){
+    public int getDuration(){
         return executeTime;
     }
 
@@ -35,20 +25,19 @@ public class Process{
         return arriveTime;
     }
 
-    public void execute(){
-        remainingTime--;
+    public int getPriority(){
+        return priority;
     }
 
-    public void activate(){
-        active = true;
+    public int getcpuTime(){
+        return cpuTime;
     }
 
     public void reset(){
-        remainingTime = cpuTime;
-        active = false;
+        cpuTime = 0;
     }
 
-    public boolean isActive(){
-        return active;
+    public void compute(){
+        cpuTime++;
     }
 }

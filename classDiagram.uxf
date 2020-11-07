@@ -1,117 +1,242 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>10</zoom_level>
+  <zoom_level>19</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>100</x>
-      <y>210</y>
-      <w>190</w>
-      <h>210</h>
+      <x>551</x>
+      <y>589</y>
+      <w>380</w>
+      <h>437</h>
     </coordinates>
     <panel_attributes>Process
 -
-- id : int
-- cpuTime : int
-- remainingTime : int
-- priority : int
-- arriveTime : int
-- active : boolean
+-id:String
+-duration:int
+-arriveTime:int
+-priority:int
+-cpuTime:int
 -
-+ execute( ) : void
-+ activate( ) : void
-+ reset( ) : void
-+ isActive( ) : boolean</panel_attributes>
++getId():String
++getDuration():int
++getArriveTime():int
++getPriority():int
++getCpuTime():int
++reset():void
++compute():void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>380</x>
-      <y>150</y>
-      <w>240</w>
-      <h>210</h>
+      <x>1292</x>
+      <y>1007</y>
+      <w>494</w>
+      <h>171</h>
+    </coordinates>
+    <panel_attributes>FCFS
+-
+-queue:AbstractQueue&lt;Process&gt;
+-
++queue(Process process):void
++run():ArrayList&lt;Results&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1292</x>
+      <y>589</y>
+      <w>494</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>SJF
+-
+-list:ArrayList&lt;Process&gt;
+-
++queue(Process process):void
+-getInsertionIndex():int
++run():ArrayList&lt;Results&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1292</x>
+      <y>1197</y>
+      <w>494</w>
+      <h>171</h>
+    </coordinates>
+    <panel_attributes>SRT
+-
+-queue:AbstractQueue&lt;Process&gt;
+-
++queue(Process process):void
++run():ArrayList&lt;Results&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1292</x>
+      <y>798</y>
+      <w>494</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>Priority
+-
+-list:ArrayList&lt;Process&gt;
+-
++queue(Process process):void
+-getInsertionIndex():int
++run():ArrayList&lt;Results&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1767</x>
+      <y>456</y>
+      <w>209</w>
+      <h>475</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>90.0;230.0;90.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1767</x>
+      <y>665</y>
+      <w>209</w>
+      <h>57</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1767</x>
+      <y>874</y>
+      <w>342</w>
+      <h>57</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>160.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1767</x>
+      <y>1083</y>
+      <w>209</w>
+      <h>57</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1767</x>
+      <y>874</y>
+      <w>209</w>
+      <h>456</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>90.0;10.0;90.0;220.0;10.0;220.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>551</x>
+      <y>133</y>
+      <w>551</w>
+      <h>361</h>
     </coordinates>
     <panel_attributes>Simulator
 -
-- processes : Process[ ]
+-time:int
+-toProcess:ArrayList&lt;Process&gt;
+-results:ArrayList&lt;Results&gt;
+-algorithm:Runable
 -
-+ FIFO( ) : DataTable[ ]
-+ SJF( ) : DataTable[ ]
-+ SRT( ) : DataTable[ ]
-+ Priorities ( ) : DataTable[ ]
-+ RoundRobin( ) : DataTable[ ]
-+ findNextSRT( ) : Process
-+ findNextSJ( ) : Process
-+ findNextPriority( ) : Process
-+ processArrive( ) : void</panel_attributes>
++compute(Process process):void
++orderProcessByArriveTime():void
++isComplete():boolean
++start():void
++selector():void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>90</x>
-      <y>120</y>
-      <w>230</w>
-      <h>70</h>
+      <x>0</x>
+      <y>342</y>
+      <w>380</w>
+      <h>722</h>
     </coordinates>
-    <panel_attributes>Loader
+    <panel_attributes>Results
 -
-- fileName : String
+-process:Process
+-startTime:int
+-endTime:int
+-output:int
+-response:int
+-waste:int
+-penalty:float
+-wait:int
 -
-+ readProcesses( ): Process[ ]</panel_attributes>
++getId():String
++getDuration():int
++getArriveTime():int
++getPriority():int
++getStartTime():int
++getEndTime():int
++getOutput():int
++getResponse():int
++getWaste():int
++getPenalty():float
++getWait():int
++setEndTime():void
++calculate():void
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>700</x>
-      <y>160</y>
-      <w>220</w>
-      <h>250</h>
+      <x>1292</x>
+      <y>342</y>
+      <w>494</w>
+      <h>228</h>
     </coordinates>
-    <panel_attributes>Table
+    <panel_attributes>RoundRobin
 -
-- dataTable : DataTable[ ]
-- averageOutput : double
-- averageResponse : double
-- averageWaste : double
-- averagePenalty : double
-- averageWait : double
-- totalReturn : int
-- totalResponse : int
-- totalWaste : int
-- totalPenalty : double
-- totalWait : int
+-stack:Stack&lt;Process&gt;
+-quantum:int
 -
-+ calculateAverage( ) : void
-+ calculateTotal( ) : void</panel_attributes>
++setQuantum(int quantum):void
++queue(Process process):void
++run():ArrayList&lt;Results&gt;</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>340</x>
-      <y>380</y>
-      <w>220</w>
-      <h>250</h>
+      <x>2071</x>
+      <y>798</y>
+      <w>361</w>
+      <h>190</h>
     </coordinates>
-    <panel_attributes>DataTable
+    <panel_attributes>/Runable/
 -
-- process : Process
-- startTime : int
-- endTime : int
-- output : int
-- response : int
-- waste : int
-- penalty : double
-- wait : int
+-current:Process
+-simulator:Simulator
 -
-+ calculateReturn( ): void
-+ calculateResponse( ): void
-+ calculateWaste( ): void
-+ calculatePenalty( ): void
-+ calculateWait( ): void</panel_attributes>
++queue()
++run()</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

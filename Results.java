@@ -1,16 +1,16 @@
-public class DataTable{
+public class Results{
     private Process process;
     private int startTime;
     private int endTime;
     private int output;
     private int response;
     private int waste;
-    private double penalty;
+    private float penalty;
     private int wait;
 
-    public DataTable(Process process){
+    public Results(Process process,int startTime){
         this.process = process;
-        startTime = 0;
+        this.startTime = startTime;
         endTime = 0;
         output = 0;
         response = 0;
@@ -19,8 +19,20 @@ public class DataTable{
         wait = 0;
     }
 
-    public Process getProcess(){
-        return process;
+    public String getId(){
+        return process.getId();
+    }
+
+    public int getDuration(){
+        return process.getDuration();
+    }
+
+    public int getArriveTime(){
+        return process.getArriveTime();
+    }
+
+    public int getPriority(){
+        return process.getPriority();
     }
 
     public int getStartTime(){
@@ -43,7 +55,7 @@ public class DataTable{
         return waste;
     }
 
-    public double getPenalty(){
+    public float getPenalty(){
         return penalty;
     }
 
@@ -51,41 +63,15 @@ public class DataTable{
         return wait;
     }
 
-    public void setStartTime(int startTime){
-        this.startTime = startTime;
-    }
-
     public void setEndTime(int endTime){
         this.endTime = endTime;
     }
 
-    public void calculateOutput(){
+    public void calculate(){
         output = endTime - startTime;
-    }
-
-    public void calculateResponse(){
         response = endTime - process.getArriveTime();
-    }
-
-    public void calculateWaste(){
-        waste = response - process.getCpuTime();
-    }
-
-    public void calculatePenalty(){
-        penalty = response/process.getCpuTime();
-    }
-
-    public void calulateWait(){
+        waste = response - process.getDuration();
+        penalty = response / process.getDuration();
         wait = startTime - process.getArriveTime();
-    }
-
-    public void reset(){
-        startTime = 0;
-        endTime = 0;
-        output = 0;
-        response = 0;
-        waste = 0;
-        penalty = 0;
-        wait = 0;
     }
 }
